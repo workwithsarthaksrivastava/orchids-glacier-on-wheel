@@ -42,12 +42,12 @@ export default function Home() {
   ];
 
   const trustedLogos = [
-    { name: "Blinkit", alt: "Blinkit logo" },
-    { name: "McDonald's", alt: "McDonald's logo" },
-    { name: "Domino's", alt: "Domino's logo" },
-    { name: "AMUL", alt: "AMUL logo" },
-    { name: "Mother Dairy", alt: "Mother Dairy logo" },
-    { name: "Hobby Bells", alt: "Hobby Bells logo" },
+    { name: "Blinkit", alt: "Blinkit logo", src: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/Blinkit-1769425278649.png?width=8000&height=8000&resize=contain" },
+    { name: "McDonald's", alt: "McDonald's logo", src: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/McDonald-s-1769425278648.png?width=8000&height=8000&resize=contain" },
+    { name: "Domino's", alt: "Domino's logo", src: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/Domino-s-Pizza-1769425278649.png?width=8000&height=8000&resize=contain" },
+    { name: "AMUL", alt: "AMUL logo", src: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/AMUL-Diary-1769425278640.png?width=8000&height=8000&resize=contain" },
+    { name: "Mother Dairy", alt: "Mother Dairy logo", src: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/Mother-Diary-1769425278646.png?width=8000&height=8000&resize=contain" },
+    { name: "Hobby Bells", alt: "Hobby Bells logo", src: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/Hobby-Bell-s-1769425278650.png?width=8000&height=8000&resize=contain" },
   ];
 
   return (
@@ -240,9 +240,13 @@ export default function Home() {
                   key={index}
                   className="bg-white p-6 rounded-lg shadow-sm flex items-center justify-center h-24"
                 >
-                  <span className="text-lg font-semibold text-gray-700 text-center">
-                    {logo.name}
-                  </span>
+                  <Image
+                    src={logo.src}
+                    alt={logo.alt}
+                    width={120}
+                    height={60}
+                    className="w-auto h-auto max-h-16 max-w-full object-contain"
+                  />
                 </div>
               ))}
             </div>
