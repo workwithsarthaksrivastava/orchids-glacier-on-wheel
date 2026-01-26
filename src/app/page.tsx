@@ -193,12 +193,12 @@ export default function Home() {
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
                 {[
                   "Bihar",
-                  "Uttar Pradesh",
-                  "Jharkhand",
-                  "West Bengal",
                   "Delhi-NCR",
-                  "Punjab",
                   "Haryana",
+                  "Jharkhand",
+                  "Punjab",
+                  "Uttar Pradesh",
+                  "West Bengal",
                   "North India",
                 ].map((region, index) => (
                   <div
