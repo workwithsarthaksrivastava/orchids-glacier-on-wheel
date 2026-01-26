@@ -62,7 +62,7 @@ export default function Home() {
             <div className="text-center space-y-8">
               <div className="space-y-4">
                 <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-[var(--navy)] leading-tight">
-                  Bihar's Pioneer in
+                  North India's Pioneer in
                   <br />
                   <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
                     Cold-Chain Logistics
