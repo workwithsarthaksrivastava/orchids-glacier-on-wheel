@@ -234,25 +234,25 @@ export default function Home() {
               </h2>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
-              {trustedLogos.map((logo, index) => (
-                <div
-                  key={index}
-                  className="group relative bg-white p-6 rounded-lg shadow-sm flex flex-col items-center justify-center h-32 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:z-10"
-                >
-                  <Image
-                    src={logo.src}
-                    alt={logo.alt}
-                    width={120}
-                    height={60}
-                    className="w-auto h-auto max-h-16 max-w-full object-contain transition-all duration-300 group-hover:max-h-20"
-                  />
-                  <p className="text-xs font-medium text-[var(--navy)] mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    {logo.name}
-                  </p>
-                </div>
-              ))}
-            </div>
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center">
+                {trustedLogos.map((logo, index) => (
+                  <div
+                    key={index}
+                    className="group relative bg-white p-6 rounded-lg shadow-sm flex flex-col items-center justify-center h-32 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:z-10"
+                  >
+                    <Image
+                      src={logo.src}
+                      alt={logo.alt}
+                      width={120}
+                      height={60}
+                      className="w-auto h-auto max-h-16 max-w-full object-contain transition-all duration-300 group-hover:max-h-20"
+                    />
+                    <p className="text-xs font-medium text-[var(--navy)] mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      {logo.name}
+                    </p>
+                  </div>
+                ))}
+              </div>
 
             <p className="text-center text-sm text-gray-600 mt-8">
               Logos shown for representation of past logistics engagements.
