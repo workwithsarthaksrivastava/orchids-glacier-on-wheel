@@ -27,11 +27,14 @@ export async function POST(req: Request) {
 
   const { name, company, phone, email, service, message } = parsed.data;
 
-  const whatsappMessage = `*New Quote Request*%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Company:* ${encodeURIComponent(company)}%0A*Phone:* ${encodeURIComponent(phone)}%0A*Email:* ${encodeURIComponent(email)}%0A*Service:* ${encodeURIComponent(service)}%0A*Message:* ${encodeURIComponent(message)}`;
+  const emailSubject = encodeURIComponent(`New Quote Request from ${name}`);
+  const emailBody = encodeURIComponent(
+    `New Quote Request\n\nName: ${name}\nCompany: ${company}\nPhone: ${phone}\nEmail: ${email}\nService: ${service}\n\nMessage:\n${message}`
+  );
 
-  const whatsappUrl = `https://wa.me/917761925078?text=${whatsappMessage}`;
+  const mailtoUrl = `mailto:nityojjwal@gmail.com?subject=${emailSubject}&body=${emailBody}`;
 
-  return Response.json({ ok: true, whatsappUrl });
+  return Response.json({ ok: true, mailtoUrl });
 }
 
 function escapeHtml(input: string) {
