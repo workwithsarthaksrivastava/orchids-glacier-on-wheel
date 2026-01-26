@@ -61,21 +61,21 @@ export default function ServicesPage() {
       image:
         "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/Cold-chain-logistics-1769435165799.png?width=8000&height=8000&resize=contain",
     },
-    {
-      icon: Wifi,
-      title: "IoT-Enabled Temperature Monitoring",
-      description:
-        "Real-time tracking and monitoring for complete visibility and control",
-      features: [
-        "24/7 real-time temperature tracking and alerts",
-        "Digital temperature logs for compliance documentation",
-        "Instant notifications for temperature deviations",
-        "Reduced spoilage risk through proactive monitoring",
-        "Complete transparency and audit trail",
-      ],
-      image:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
-    },
+      {
+        icon: Wifi,
+        title: "IoT-Enabled Temperature Monitoring",
+        description:
+          "Advanced monitoring and reporting for complete visibility and control",
+        features: [
+          "24/7 temperature monitoring and alerts",
+          "Digital temperature logs for compliance documentation",
+          "Instant notifications for temperature deviations",
+          "Reduced spoilage risk through proactive monitoring",
+          "Complete transparency and audit trail",
+        ],
+        image:
+          "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+      },
   ];
 
   const industries = [
