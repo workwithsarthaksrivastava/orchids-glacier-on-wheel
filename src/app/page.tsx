@@ -238,15 +238,18 @@ export default function Home() {
               {trustedLogos.map((logo, index) => (
                 <div
                   key={index}
-                  className="bg-white p-6 rounded-lg shadow-sm flex items-center justify-center h-24"
+                  className="group relative bg-white p-6 rounded-lg shadow-sm flex flex-col items-center justify-center h-32 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:z-10"
                 >
                   <Image
                     src={logo.src}
                     alt={logo.alt}
                     width={120}
                     height={60}
-                    className="w-auto h-auto max-h-16 max-w-full object-contain"
+                    className="w-auto h-auto max-h-16 max-w-full object-contain transition-all duration-300 group-hover:max-h-20"
                   />
+                  <p className="text-xs font-medium text-[var(--navy)] mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    {logo.name}
+                  </p>
                 </div>
               ))}
             </div>
