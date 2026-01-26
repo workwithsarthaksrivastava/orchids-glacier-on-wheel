@@ -36,6 +36,7 @@ const formSchema = z.object({
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -49,26 +50,48 @@ export function ContactForm() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true);
-    setTimeout(() => {
-      console.log(values);
-      setIsSubmitting(false);
+    setSubmitSuccess(false);
+    setSubmitError(null);
+
+    try {
+      const res = await fetch("/api/quote", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      });
+
+      if (!res.ok) {
+        const payload = (await res.json().catch(() => null)) as
+          | { error?: string }
+          | null;
+        throw new Error(payload?.error || "Failed to submit. Please try again.");
+      }
+
       setSubmitSuccess(true);
       form.reset();
       setTimeout(() => setSubmitSuccess(false), 5000);
-    }, 1000);
+    } catch (err) {
+      setSubmitError(err instanceof Error ? err.message : "Something went wrong");
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
     <div className="bg-white p-8 rounded-xl shadow-lg">
-      <h3 className="text-2xl font-bold text-[var(--navy)] mb-6">
-        Get a Quote
-      </h3>
+      <h3 className="text-2xl font-bold text-[var(--navy)] mb-6">Get a Quote</h3>
 
       {submitSuccess && (
         <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg text-green-800">
-          Thank you! We'll get back to you within 24 hours.
+          Thank you! We&apos;ll get back to you within 24 hours.
+        </div>
+      )}
+
+      {submitError && (
+        <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg text-red-800">
+          {submitError}
         </div>
       )}
 
@@ -124,11 +147,7 @@ export function ContactForm() {
                 <FormItem>
                   <FormLabel>Email *</FormLabel>
                   <FormControl>
-                    <Input
-                      type="email"
-                      placeholder="your@email.com"
-                      {...field}
-                    />
+                    <Input type="email" placeholder="your@email.com" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -142,10 +161,7 @@ export function ContactForm() {
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Service Requirement *</FormLabel>
-                <Select
-                  onValueChange={field.onChange}
-                  defaultValue={field.value}
-                >
+                <Select onValueChange={field.onChange} defaultValue={field.value}>
                   <FormControl>
                     <SelectTrigger>
                       <SelectValue placeholder="Select a service" />
@@ -155,15 +171,11 @@ export function ContactForm() {
                     <SelectItem value="van-rental">
                       Refrigerated Van Rental
                     </SelectItem>
-                    <SelectItem value="cold-chain">
-                      Cold-Chain Logistics
-                    </SelectItem>
+                    <SelectItem value="cold-chain">Cold-Chain Logistics</SelectItem>
                     <SelectItem value="iot-monitoring">
                       IoT Temperature Monitoring
                     </SelectItem>
-                    <SelectItem value="custom">
-                      Custom Solution
-                    </SelectItem>
+                    <SelectItem value="custom">Custom Solution</SelectItem>
                   </SelectContent>
                 </Select>
                 <FormMessage />
