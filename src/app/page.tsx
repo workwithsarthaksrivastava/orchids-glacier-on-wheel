@@ -198,7 +198,6 @@ export default function Home() {
                     "Jharkhand",
                     "Punjab",
                     "Uttar Pradesh",
-                    "Uttarakhand",
                     "West Bengal",
                     "North India",
                   ].map((region, index) => (
