@@ -21,6 +21,10 @@ export default function Home() {
 
   const slideshowImages = [
     {
+      src: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/Refregirated-van-1769434761878.png?width=8000&height=8000&resize=contain",
+      alt: "Glacier On Wheels refrigerated van"
+    },
+    {
       src: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/ChatGPT-Image-Jan-26-2026-06_34_33-PM-1769434632955.png?width=8000&height=8000&resize=contain",
       alt: "Serving North India - Cold chain logistics across North India"
     },
