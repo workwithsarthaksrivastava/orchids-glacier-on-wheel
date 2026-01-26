@@ -112,11 +112,11 @@ export default function AboutPage() {
 
             <div className="mt-12">
               <Image
-                src="https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?w=1200&q=80"
+                src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/images-1769435408480.png?width=8000&height=8000&resize=contain"
                 alt="Glacier On Wheel cold chain logistics operations"
                 width={1200}
                 height={500}
-                className="rounded-2xl shadow-xl w-full h-[400px] object-cover"
+                className="rounded-2xl shadow-xl w-full h-[400px] object-contain"
               />
             </div>
           </div>
