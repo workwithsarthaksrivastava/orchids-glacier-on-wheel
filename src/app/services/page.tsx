@@ -324,7 +324,7 @@ export default function ServicesPage() {
                     asChild
                     size="lg"
                     variant="outline"
-                    className="border-2 border-white text-white hover:bg-white hover:text-[var(--navy)]"
+                    className="border-2 border-white bg-transparent text-white hover:bg-white hover:text-[var(--navy)]"
                   >
                     <a href="tel:+919155956967">Call +91 9155956967</a>
                   </Button>
