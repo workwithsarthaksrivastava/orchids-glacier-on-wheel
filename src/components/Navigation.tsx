@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -19,11 +20,18 @@ export function Navigation() {
     <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="text-2xl font-bold text-[var(--navy)]">
-              Glacier On Wheel
-            </div>
-          </Link>
+            <Link href="/" className="flex items-center space-x-3">
+              <Image
+                src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/GOW-Icon-1769425042165.jpg?width=8000&height=8000&resize=contain"
+                alt="Glacier On Wheel Logo"
+                width={48}
+                height={48}
+                className="w-12 h-12 object-contain"
+              />
+              <div className="text-2xl font-bold text-[var(--navy)]">
+                Glacier On Wheel
+              </div>
+            </Link>
 
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
