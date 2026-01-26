@@ -1,3 +1,6 @@
+'use client';
+
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Navigation } from "@/components/Navigation";
@@ -14,6 +17,30 @@ import {
 } from "lucide-react";
 
 export default function Home() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const slideshowImages = [
+    {
+      src: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/ChatGPT-Image-Jan-26-2026-06_34_33-PM-1769434632955.png?width=8000&height=8000&resize=contain",
+      alt: "Serving North India - Cold chain logistics across North India"
+    },
+    {
+      src: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/ChatGPT-Image-Jan-26-2026-06_32_23-PM-1769434632894.png?width=8000&height=8000&resize=contain",
+      alt: "Trusted by brands - Leading companies trust our cold chain services"
+    },
+    {
+      src: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/ChatGPT-Image-Jan-26-2026-06_30_37-PM-1769434632900.png?width=8000&height=8000&resize=contain",
+      alt: "IoT Temperature Tracking - Real-time monitoring of cold chain"
+    }
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slideshowImages.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [slideshowImages.length]);
+
   const services = [
     {
       icon: Truck,
@@ -117,16 +144,41 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="mt-16 relative">
-              <Image
-                src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1200&q=80"
-                alt="Refrigerated van for cold chain logistics in Bihar"
-                width={1200}
-                height={600}
-                className="rounded-2xl shadow-2xl w-full h-[400px] object-cover"
-                priority
-              />
-            </div>
+              <div className="mt-16 relative">
+                <div className="relative w-full h-[400px] sm:h-[500px] rounded-2xl shadow-2xl overflow-hidden bg-white">
+                  {slideshowImages.map((image, slideIndex) => (
+                    <div
+                      key={slideIndex}
+                      className={`absolute inset-0 transition-opacity duration-1000 ${
+                        slideIndex === currentSlide ? 'opacity-100' : 'opacity-0'
+                      }`}
+                    >
+                      <Image
+                        src={image.src}
+                        alt={image.alt}
+                        width={1200}
+                        height={600}
+                        className="w-full h-full object-contain"
+                        priority={slideIndex === 0}
+                      />
+                    </div>
+                  ))}
+                  <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
+                    {slideshowImages.map((_, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => setCurrentSlide(idx)}
+                        className={`w-2 h-2 rounded-full transition-all ${
+                          idx === currentSlide 
+                            ? 'bg-blue-600 w-8' 
+                            : 'bg-gray-400 hover:bg-blue-400'
+                        }`}
+                        aria-label={`Go to slide ${idx + 1}`}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </div>
           </div>
         </section>
 
