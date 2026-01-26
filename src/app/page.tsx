@@ -190,25 +190,26 @@ export default function Home() {
               </p>
             </div>
 
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
-                {[
-                  "Bihar",
-                  "Delhi-NCR",
-                  "Haryana",
-                  "Jharkhand",
-                  "Punjab",
-                  "Uttar Pradesh",
-                  "West Bengal",
-                  "North India",
-                ].map((region, index) => (
-                  <div
-                    key={index}
-                    className="p-4 rounded-lg text-center font-semibold bg-[var(--ice-blue)]/20 text-[var(--navy)]"
-                  >
-                    {region}
-                  </div>
-                ))}
-              </div>
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
+                  {[
+                    "Bihar",
+                    "Delhi-NCR",
+                    "Haryana",
+                    "Jharkhand",
+                    "Punjab",
+                    "Uttar Pradesh",
+                    "Uttarakhand",
+                    "West Bengal",
+                    "North India",
+                  ].map((region, index) => (
+                    <div
+                      key={index}
+                      className="p-4 rounded-lg text-center font-semibold bg-[var(--ice-blue)]/20 text-[var(--navy)]"
+                    >
+                      {region}
+                    </div>
+                  ))}
+                </div>
 
             <div className="mt-12">
               <Image
