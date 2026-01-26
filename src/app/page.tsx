@@ -242,7 +242,7 @@ export default function Home() {
                         alt={logo.alt}
                         width={120}
                         height={60}
-                        className="w-auto h-auto max-h-16 max-w-full object-contain transition-all duration-300 group-hover:max-h-20"
+                        className="w-auto h-auto max-h-16 max-w-full object-contain transition-all duration-300 group-hover:max-h-20 group-hover:-translate-y-2"
                       />
                       <p className="absolute bottom-2 left-0 right-0 text-xs font-medium text-[var(--navy)] text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         {logo.name}
