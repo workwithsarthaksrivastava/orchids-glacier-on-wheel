@@ -50,44 +50,50 @@ export function ContactForm() {
     },
   });
 
-  async function onSubmit(values: z.infer<typeof formSchema>) {
-    setIsSubmitting(true);
-    setSubmitSuccess(false);
-    setSubmitError(null);
+    async function onSubmit(values: z.infer<typeof formSchema>) {
+      setIsSubmitting(true);
+      setSubmitSuccess(false);
+      setSubmitError(null);
+  
+      try {
+        const res = await fetch("/api/quote", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(values),
+        });
+  
+        if (!res.ok) {
+          const payload = (await res.json().catch(() => null)) as
+            | { error?: string }
+            | null;
+          throw new Error(payload?.error || "Failed to submit. Please try again.");
+        }
 
-    try {
-      const res = await fetch("/api/quote", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(values),
-      });
-
-      if (!res.ok) {
-        const payload = (await res.json().catch(() => null)) as
-          | { error?: string }
-          | null;
-        throw new Error(payload?.error || "Failed to submit. Please try again.");
+        const data = await res.json() as { whatsappUrl?: string };
+        
+        if (data.whatsappUrl) {
+          window.open(data.whatsappUrl, "_blank");
+        }
+  
+        setSubmitSuccess(true);
+        form.reset();
+        setTimeout(() => setSubmitSuccess(false), 5000);
+      } catch (err) {
+        setSubmitError(err instanceof Error ? err.message : "Something went wrong");
+      } finally {
+        setIsSubmitting(false);
       }
-
-      setSubmitSuccess(true);
-      form.reset();
-      setTimeout(() => setSubmitSuccess(false), 5000);
-    } catch (err) {
-      setSubmitError(err instanceof Error ? err.message : "Something went wrong");
-    } finally {
-      setIsSubmitting(false);
     }
-  }
 
   return (
     <div className="bg-white p-8 rounded-xl shadow-lg">
       <h3 className="text-2xl font-bold text-[var(--navy)] mb-6">Get a Quote</h3>
 
-      {submitSuccess && (
-        <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg text-green-800">
-          Thank you! We&apos;ll get back to you within 24 hours.
-        </div>
-      )}
+        {submitSuccess && (
+          <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg text-green-800">
+            Opening WhatsApp to send your quote request...
+          </div>
+        )}
 
       {submitError && (
         <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg text-red-800">

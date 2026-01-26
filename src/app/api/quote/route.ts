@@ -10,19 +10,6 @@ const quoteRequestSchema = z.object({
 });
 
 export async function POST(req: Request) {
-  const resendApiKey = process.env.RESEND_API_KEY;
-  const fromEmail = process.env.RESEND_FROM_EMAIL;
-
-  if (!resendApiKey || !fromEmail) {
-    return Response.json(
-      {
-        error:
-          "Email service is not configured. Please set RESEND_API_KEY and RESEND_FROM_EMAIL.",
-      },
-      { status: 500 }
-    );
-  }
-
   let json: unknown;
   try {
     json = await req.json();
@@ -40,49 +27,11 @@ export async function POST(req: Request) {
 
   const { name, company, phone, email, service, message } = parsed.data;
 
-  const subject = `New Quote Request: ${name} (${company})`;
-  const html = `
-    <div style="font-family: Arial, sans-serif; line-height: 1.5;">
-      <h2>New Quote Request</h2>
-      <p><strong>Name:</strong> ${escapeHtml(name)}</p>
-      <p><strong>Company:</strong> ${escapeHtml(company)}</p>
-      <p><strong>Phone:</strong> ${escapeHtml(phone)}</p>
-      <p><strong>Email:</strong> ${escapeHtml(email)}</p>
-      <p><strong>Service:</strong> ${escapeHtml(service)}</p>
-      <p><strong>Message:</strong></p>
-      <pre style="white-space: pre-wrap; background: #f6f6f6; padding: 12px; border-radius: 8px;">${escapeHtml(
-        message
-      )}</pre>
-    </div>
-  `;
+  const whatsappMessage = `*New Quote Request*%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Company:* ${encodeURIComponent(company)}%0A*Phone:* ${encodeURIComponent(phone)}%0A*Email:* ${encodeURIComponent(email)}%0A*Service:* ${encodeURIComponent(service)}%0A*Message:* ${encodeURIComponent(message)}`;
 
-  const resendResponse = await fetch("https://api.resend.com/emails", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${resendApiKey}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      from: fromEmail,
-      to: "nityojjwal@gmail.com",
-      subject,
-      html,
-      replyTo: email,
-    }),
-  });
+  const whatsappUrl = `https://wa.me/917761925078?text=${whatsappMessage}`;
 
-  if (!resendResponse.ok) {
-    const text = await resendResponse.text().catch(() => "");
-    return Response.json(
-      {
-        error: "Failed to send email",
-        details: text || resendResponse.statusText,
-      },
-      { status: 502 }
-    );
-  }
-
-  return Response.json({ ok: true });
+  return Response.json({ ok: true, whatsappUrl });
 }
 
 function escapeHtml(input: string) {
