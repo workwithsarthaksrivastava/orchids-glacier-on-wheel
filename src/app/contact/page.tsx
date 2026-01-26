@@ -6,9 +6,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { MapPin, Phone, Mail, Clock, Instagram } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Contact Glacier On Wheel | Cold-Chain Logistics Hajipur",
+  title: "Contact Glacier on Wheels | Cold-Chain Logistics Hajipur",
   description:
-    "Get in touch with Glacier On Wheel for refrigerated van rentals and cold-chain logistics services. Located in Hajipur, Bihar. Call +91 9155956967",
+    "Get in touch with Glacier on Wheels for refrigerated van rentals and cold-chain logistics services. Located in Hajipur, Bihar. Call +91 9155956967",
   keywords: [
     "cold chain logistics Hajipur",
     "refrigerated transport Bihar",
@@ -144,7 +144,7 @@ export default function ContactPage() {
                       allowFullScreen
                       loading="lazy"
                       referrerPolicy="no-referrer-when-downgrade"
-                      title="Glacier On Wheel Office Location"
+                        title="Glacier on Wheels Office Location"
                     ></iframe>
                   </div>
                 </div>

@@ -17,7 +17,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Refrigerated Van & Cold-Chain Services | Glacier On Wheel",
+  title: "Refrigerated Van & Cold-Chain Services | Glacier on Wheels",
   description:
     "Comprehensive cold-chain logistics solutions including refrigerated van rentals, IoT temperature monitoring, and frozen food transportation across North India.",
   keywords: [
@@ -231,7 +231,7 @@ export default function ServicesPage() {
                 >
                   <Image
                     src={service.image}
-                    alt={`${service.title} - Glacier On Wheel`}
+                      alt={`${service.title} - Glacier on Wheels`}
                     width={800}
                     height={600}
                     className="rounded-xl shadow-lg w-full h-[400px] object-cover"

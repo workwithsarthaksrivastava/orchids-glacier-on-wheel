@@ -22,7 +22,7 @@ export default function Home() {
   const slideshowImages = [
     {
       src: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/Refregirated-van-1769434761878.png?width=8000&height=8000&resize=contain",
-      alt: "Glacier On Wheels refrigerated van"
+        alt: "Glacier on Wheels refrigerated van"
     },
     {
       src: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/ChatGPT-Image-Jan-26-2026-06_34_33-PM-1769434632955.png?width=8000&height=8000&resize=contain",
@@ -190,10 +190,10 @@ export default function Home() {
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl sm:text-4xl font-bold text-[var(--navy)] mb-4">
-                About Glacier On Wheel
+                About Glacier on Wheels
               </h2>
               <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-                Glacier On Wheel is Bihar's first dedicated cold-chain
+                Glacier on Wheels is Bihar's first dedicated cold-chain
                 logistics provider, delivering temperature-controlled
                 transportation solutions across North India. We specialize in
                 refrigerated van rentals for FMCG, QSR, ice-cream, and

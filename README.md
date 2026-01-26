@@ -1,4 +1,4 @@
-# Glacier On Wheel - Cold-Chain Logistics Website
+# Glacier on Wheels - Cold-Chain Logistics Website
 
 Modern, SEO-optimized website for Bihar's pioneer in cold-chain logistics.
 
@@ -102,7 +102,7 @@ npm start
 
 ## 📞 Contact Information
 
-**Glacier On Wheel**
+**Glacier on Wheels**
 - Address: 102, Ground Floor, Malti Complex, Ramashish Chowk, Hajipur – 844101, Bihar
 - Phone: +91 9155956967, +91 7761925078
 - Coverage: Bihar, UP, Jharkhand, West Bengal, Delhi-NCR, Punjab, Haryana
@@ -180,7 +180,7 @@ src/
 
 ## 📄 License
 
-Proprietary - Glacier On Wheel © 2026
+Proprietary - Glacier on Wheels © 2026
 
 ## 🤝 Support
 
@@ -190,4 +190,4 @@ For website support or logistics inquiries:
 
 ---
 
-Built with ❄️ by the Glacier On Wheel team
+Built with ❄️ by the Glacier on Wheels team

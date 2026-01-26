@@ -15,9 +15,9 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Glacier On Wheel | Cold-Chain Logistics & Refrigerated Vans in Bihar",
+  title: "Glacier on Wheels | Cold-Chain Logistics & Refrigerated Vans in Bihar",
   description:
-    "Glacier On Wheel is Bihar's pioneer in cold-chain logistics providing IoT-enabled refrigerated van rentals across North India. Trusted by Blinkit, McDonald's, Domino's, AMUL & more.",
+    "Glacier on Wheels is Bihar's pioneer in cold-chain logistics providing IoT-enabled refrigerated van rentals across North India. Trusted by Blinkit, McDonald's, Domino's, AMUL & more.",
   keywords: [
     "cold chain logistics bihar",
     "refrigerated van rental bihar",
@@ -28,14 +28,14 @@ export const metadata: Metadata = {
     "IoT temperature monitoring logistics",
     "frozen food transportation",
   ],
-  authors: [{ name: "Glacier On Wheel" }],
+  authors: [{ name: "Glacier on Wheels" }],
   openGraph: {
-    title: "Glacier On Wheel | Cold-Chain Logistics in Bihar",
+    title: "Glacier on Wheels | Cold-Chain Logistics in Bihar",
     description:
       "Reliable cold-chain logistics & refrigerated van rentals across North India.",
     type: "website",
     locale: "en_IN",
-    siteName: "Glacier On Wheel",
+    siteName: "Glacier on Wheels",
   },
 };
 
@@ -53,7 +53,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "LogisticsBusiness",
-              name: "Glacier On Wheel",
+                name: "Glacier on Wheels",
               address: {
                 "@type": "PostalAddress",
                 streetAddress:

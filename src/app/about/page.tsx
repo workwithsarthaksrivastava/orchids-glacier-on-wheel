@@ -15,9 +15,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About Glacier On Wheel | Cold-Chain Experts in Bihar",
+  title: "About Glacier on Wheels | Cold-Chain Experts in Bihar",
   description:
-    "Learn about Glacier On Wheel, Bihar's 1st pioneer in cold-chain logistics with IoT-enabled temperature monitoring and reliable refrigerated transportation.",
+    "Learn about Glacier on Wheels, Bihar's 1st pioneer in cold-chain logistics with IoT-enabled temperature monitoring and reliable refrigerated transportation.",
   keywords: [
     "cold chain experts india",
     "refrigerated transport company",
@@ -102,7 +102,7 @@ export default function AboutPage() {
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
               <h1 className="text-5xl sm:text-6xl font-bold text-[var(--navy)] mb-6">
-                About Glacier On Wheel
+                About Glacier on Wheels
               </h1>
               <p className="text-xl text-gray-700 max-w-3xl mx-auto">
                 Bihar's 1st pioneer in cold-chain logistics, revolutionizing
@@ -113,7 +113,7 @@ export default function AboutPage() {
             <div className="mt-12">
               <Image
                 src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/images-1769435408480.png?width=8000&height=8000&resize=contain"
-                alt="Glacier On Wheel cold chain logistics operations"
+                  alt="Glacier on Wheels cold chain logistics operations"
                 width={1200}
                 height={500}
                 className="rounded-2xl shadow-xl w-full h-[400px] object-contain"
@@ -130,8 +130,8 @@ export default function AboutPage() {
                   Our Story
                 </h2>
                 <div className="space-y-4 text-lg text-gray-700">
-                  <p>
-                    Glacier On Wheel was founded with a clear mission: to bridge
+                    <p>
+                      Glacier on Wheels was founded with a clear mission: to bridge
                     the cold-chain logistics gap in Bihar and North India. As
                     the region's first dedicated cold-chain logistics provider,
                     we recognized the critical need for reliable

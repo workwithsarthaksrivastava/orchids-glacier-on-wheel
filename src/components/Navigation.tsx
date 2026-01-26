@@ -23,14 +23,14 @@ export function Navigation() {
             <Link href="/" className="flex items-center space-x-3">
               <Image
                 src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/GOW-Icon-1769425042165.jpg?width=8000&height=8000&resize=contain"
-                alt="Glacier On Wheel Logo"
-                width={48}
-                height={48}
-                className="w-12 h-12 object-contain"
-              />
-              <div className="text-2xl font-bold text-[var(--navy)]">
-                Glacier On Wheel
-              </div>
+                  alt="Glacier on Wheels Logo"
+                  width={48}
+                  height={48}
+                  className="w-12 h-12 object-contain"
+                />
+                <div className="text-2xl font-bold text-[var(--navy)]">
+                  Glacier on Wheels
+                </div>
             </Link>
 
           <div className="hidden md:flex items-center space-x-8">

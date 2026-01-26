@@ -11,12 +11,12 @@ export function Footer() {
               <div className="flex items-center space-x-3 mb-4">
                 <Image
                   src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/GOW-Icon-1769425042165.jpg?width=8000&height=8000&resize=contain"
-                  alt="Glacier On Wheel Logo"
+                  alt="Glacier on Wheels Logo"
                   width={48}
                   height={48}
                   className="w-12 h-12 object-contain"
                 />
-                <h3 className="text-2xl font-bold">Glacier On Wheel</h3>
+                <h3 className="text-2xl font-bold">Glacier on Wheels</h3>
               </div>
               <p className="text-gray-300 mb-4">
                 Bihar's pioneer in cold-chain logistics providing IoT-enabled
@@ -101,7 +101,7 @@ export function Footer() {
 
         <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-sm">
           <p>
-            &copy; {new Date().getFullYear()} Glacier On Wheel. All rights
+            &copy; {new Date().getFullYear()} Glacier on Wheels. All rights
             reserved.
           </p>
         </div>
