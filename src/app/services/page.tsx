@@ -31,21 +31,21 @@ export const metadata: Metadata = {
 
 export default function ServicesPage() {
   const mainServices = [
-    {
-      icon: Truck,
-      title: "Refrigerated Van Rentals",
-      description:
-        "Modern fleet of temperature-controlled vehicles available for short-term and long-term rentals",
-      features: [
-        "Temperature-controlled vans maintaining -25°C to +8°C",
-        "Ideal for ice-cream, dairy, frozen foods, and pharmaceuticals",
-        "Short-term and long-term rental options",
-        "Well-maintained fleet with regular servicing",
-        "Flexible capacity options from 1 ton to 5 tons",
-      ],
-      image:
-        "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&q=80",
-    },
+      {
+        icon: Truck,
+        title: "Refrigerated Van Rentals",
+        description:
+          "Modern fleet of temperature-controlled vehicles available for short-term and long-term rentals",
+        features: [
+          "Temperature-controlled vans maintaining -25°C to +8°C",
+          "Ideal for ice-cream, dairy, frozen foods, and pharmaceuticals",
+          "Short-term and long-term rental options",
+          "Well-maintained fleet with regular servicing",
+          "Flexible capacity options from 1 ton to 5 tons",
+        ],
+        image:
+          "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/Animated-1769434885700.png?width=8000&height=8000&resize=contain",
+      },
     {
       icon: Package,
       title: "Cold-Chain Logistics Solutions",
@@ -59,7 +59,7 @@ export default function ServicesPage() {
         "Quality assurance and product integrity maintenance",
       ],
       image:
-        "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80",
+        "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/Cold-chain-logistics-1769435165799.png?width=8000&height=8000&resize=contain",
     },
     {
       icon: Wifi,
