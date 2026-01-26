@@ -213,11 +213,11 @@ export default function Home() {
 
             <div className="mt-12">
               <Image
-                src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=1200&q=80"
+                src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/ChatGPT-Image-Jan-25-2026-05_54_45-PM-1769426039644.png?width=8000&height=8000&resize=contain"
                 alt="North India coverage map"
                 width={1200}
-                height={400}
-                className="rounded-xl w-full h-[300px] object-cover"
+                height={800}
+                className="rounded-xl w-full h-auto object-contain"
               />
             </div>
           </div>
