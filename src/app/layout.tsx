@@ -29,6 +29,9 @@ export const metadata: Metadata = {
     "frozen food transportation",
   ],
   authors: [{ name: "Glacier on Wheels" }],
+  icons: {
+    icon: "/favicon.ico",
+  },
   openGraph: {
     title: "Glacier on Wheels | Cold-Chain Logistics in Bihar",
     description:
