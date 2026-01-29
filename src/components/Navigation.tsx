@@ -9,12 +9,13 @@ import { Button } from "@/components/ui/button";
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const navLinks = [
-    { href: "/", label: "Home" },
-    { href: "/about", label: "About" },
-    { href: "/services", label: "Services" },
-    { href: "/contact", label: "Contact" },
-  ];
+    const navLinks = [
+      { href: "/", label: "Home" },
+      { href: "/about", label: "About" },
+      { href: "/services", label: "Services" },
+      { href: "/blog", label: "Blog" },
+      { href: "/contact", label: "Contact" },
+    ];
 
   return (
     <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
