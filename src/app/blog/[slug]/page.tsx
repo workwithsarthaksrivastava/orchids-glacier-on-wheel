@@ -110,15 +110,3 @@ export default async function BlogPostPage({ params }: PageProps) {
   )
 }
 
-export async function generateStaticParams() {
-  const supabase = await createClient()
-  
-  const { data: posts } = await supabase
-    .from('blog_posts')
-    .select('slug')
-    .eq('status', 'published')
-
-  return posts?.map((post) => ({
-    slug: post.slug,
-  })) || []
-}
